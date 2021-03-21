@@ -11,6 +11,15 @@ public class CashRegister {
 	public CashRegister() {
 
 	}
+	
+	public CashRegister(Map<Integer, Integer> denomTable) {
+		Cash[] cashSlots = new Cash[denomTable.size()];
+		for (int i = 0; i < denomTable.size(); i++) {
+			Cash cash = new Cash(0, denomTable.get(i).intValue());
+			cashSlots[i] = cash;
+		}
+		this.cashSlots = cashSlots;
+	}
 
 	public void show() {
 		System.out.print("$" + getTotal() + " ");
@@ -33,14 +42,6 @@ public class CashRegister {
 				Cash cash = this.cashSlots[i];
 				cash.setCount(cash.getCount() + Integer.parseInt(input[i]));
 			}
-		} else {
-			Cash[] cashSlots = new Cash[denomTable.size()];
-
-			for (int i = 0; i < input.length; i++) {
-				Cash cash = new Cash(Integer.parseInt(input[i]), denomTable.get(i).intValue());
-				cashSlots[i] = cash;
-			}
-			this.cashSlots = cashSlots;
 		}
 		show();
 	}

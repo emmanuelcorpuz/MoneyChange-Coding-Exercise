@@ -27,7 +27,7 @@ public class Main {
 		System.out.println("ready");
 		String command = "";
 
-		CashRegister cashRegister = new CashRegister();
+		CashRegister cashRegister = new CashRegister(denomTable);
 
 
 		do {

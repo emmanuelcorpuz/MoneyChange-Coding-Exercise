@@ -126,11 +126,11 @@ public class CashRegister {
 			Cash c = change[denomTableReverse.get(d[S[l]].getDenomination())];
 			c.setCount(c.getCount() + 1);
 			l = l-d[S[l]].getDenomination();
-			d[S[l]].setCount(d[S[l]].getCount() - 1);
 			if (l < 0)  {
 				System.out.println("sorry");
 				return -1;
 			}
+			d[S[l]].setCount(d[S[l]].getCount() - 1);
 			if (d[S[l]].getCount() == 0) {
 				return l;
 			}

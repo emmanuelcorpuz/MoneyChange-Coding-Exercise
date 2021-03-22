@@ -50,6 +50,8 @@ public class Main {
 				}
 			} else if ("change".equals(command)) {
 				cashRegister.change(Integer.parseInt(input[1]), denomTableReverse, denomTable);
+			} else if ("clear".equals(command)) {
+				cashRegister.removeAllCashFromRegister();
 			}
 
 		} while (!"quit".equals(command));

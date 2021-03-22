@@ -20,6 +20,13 @@ public class CashRegister {
 		}
 		this.cashSlots = cashSlots;
 	}
+	
+	public void removeAllCashFromRegister() {
+		for (Cash cash : this.cashSlots) {
+			cash.setCount(0);
+		}
+		show();
+	}
 
 	public void show() {
 		System.out.print("$" + getTotal() + " ");

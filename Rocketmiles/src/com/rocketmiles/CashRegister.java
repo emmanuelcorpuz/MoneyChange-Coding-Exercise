@@ -74,15 +74,21 @@ public class CashRegister {
 		for (Map.Entry<Integer, Integer> entry : denomTable.entrySet()) {
 			change[entry.getKey()] = new Cash(0, entry.getValue());
 		}
-
+		
+		Cash[] cashCopy = new Cash[this.cashSlots.length];
+		for (int i = 0; i < this.cashSlots.length; i++) {
+			cashCopy[i] =  new Cash(this.cashSlots[i].getCount(), this.cashSlots[i].getDenomination());
+		}
+		
 		while (amount > 0) {
-			amount = changeMethod(this.cashSlots, amount, denomTableReverse, change);
+			amount = changeMethod(cashCopy, amount, denomTableReverse, change);
 		}
 		if (amount == 0) {
 			String[] changeCount = new String[change.length];
 			for(int j=0; j < change.length; j++) {
 				changeCount[j] = String.valueOf(change[j].getCount());
 			}
+			
 			if (take(changeCount, denomTable)) {
 				System.out.println(Arrays.toString(change));
 			}
@@ -120,11 +126,12 @@ public class CashRegister {
 			Cash c = change[denomTableReverse.get(d[S[l]].getDenomination())];
 			c.setCount(c.getCount() + 1);
 			l = l-d[S[l]].getDenomination();
+			d[S[l]].setCount(d[S[l]].getCount() - 1);
 			if (l < 0)  {
 				System.out.println("sorry");
 				return -1;
 			}
-			if ((d[S[l]].getCount() - 1) == 0) {
+			if (d[S[l]].getCount() == 0) {
 				return l;
 			}
 		}

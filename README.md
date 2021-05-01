@@ -1,3 +1,5 @@
+[JD - Rocketmiles - Java Coding Take-home.pdf](https://github.com/emmanuelcorpuz/MoneyChange-Coding-Exercise/files/6408998/JD.-.Rocketmiles.-.Java.Coding.Take-home.pdf)
+[JD - Rocketmiles - Java Coding Take-home.pdf](https://github.com/emmanuelcorpuz/MoneyChange-Coding-Exercise/files/6408999/JD.-.Rocketmiles.-.Java.Coding.Take-home.pdf)
 # MoneyChange-Coding-Exercise
 
 My dynamic programming algorithm solution to the following coding problem:
